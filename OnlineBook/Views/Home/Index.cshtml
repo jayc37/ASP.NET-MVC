@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var listNewProducts = (List<Model.EF.SanPham>)ViewBag.NewProducts;
+    var ListHotProducts = (List<Model.EF.SanPham>)ViewBag.ListHotProducts;
+}
+<div class="content">
+    <div class="content_top">
+        <div class="heading">
+            <h3>Sản phẩm mới</h3>
+        </div>
+        <div class="see">
+            <p><a href="/san-pham">See all Products</a></p>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="section group">         
+        @foreach(var item in listNewProducts)
+
+        {
+            var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+                <div class="grid_1_of_4 images_1_of_4">
+            <a href="preview.html"><img src="@item.Image" width="250" height="250" alt="@item.Name" /></a>
+            <h2>@item.Name </h2>
+            <div class="price-details">
+                <div class="price-number">
+                    <p><span class="rupees">@(item.Price.HasValue?@item.Price.Value.ToString("N0"):"Liên Hệ")</span></p>
+                </div>
+                <div class="add-cart">
+                    <h4><a href="@url">Thêm vào giỏ hàng</a></h4>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        }
+        
+    </div>
+    <div class="content_bottom">
+        <div class="heading">
+            <h3>Sản Phẩm Hot</h3>
+        </div>
+        @foreach (var item in ListHotProducts)
+
+        {
+            var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+            <div class="grid_1_of_4 images_1_of_4">
+                <a href="preview.html"><img src="@item.Image" width="250" height="400" alt="@item.Name" /></a>
+                <h2>@item.Name </h2>
+                <div class="price-details">
+                    <div class="price-number">
+                        <p><span class="rupees">@(item.Price.HasValue ? @item.Price.Value.ToString("N0") : "Liên Hệ")</span>
+                        </p>
+                    </div>
+                    <div class="add-cart">
+                        <h4><a href="@url">Thêm vào giỏ hàng</a></h4>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        }
+        <div class="clear"></div>
+    </div>
+    <div class="section group">
+        <div class="grid_1_of_4 images_1_of_4">
+            <a href="preview.html"> <img src="~/Data/files/Vanhoc/nguoncoi.jpg" alt="" />
+            </a>
+            <h2>Nguồn cội </h2>
+            <div class="price-details">
+                <div class="price-number">
+                    <p><span class="rupees">200.000</span></p>
+                </div>
+                <div class="add-cart">
+                    <h4><a href="preview.html">thêm vào giỏi</a></h4>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="grid_1_of_4 images_1_of_4">
+            <a href="preview.html">
+               
+                <img src="~/Data/files/Vanhoc/Parragon_1.jpg" alt="" />
+            </a>
+            <h2>Sự diệu hàng khó cưỡng </h2>
+            <div class="price-details">
+                <div class="price-number">
+                    <p><span class="rupees">200.000</span></p>
+                </div>
+                <div class="add-cart">
+                    <h4><a href="preview.html">Thêm vào giỏ</a></h4>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="grid_1_of_4 images_1_of_4">
+            <a href="preview.html">
+               
+                <img src="~/Data/files/Vanhoc/HOMNAY-240x330.jpg" alt="" />
+            </a>
+            <h2>Hôm nay </h2>
+            <div class="price-details">
+                <div class="price-number">
+                    <p><span class="rupees">150.000</span></p>
+                </div>
+                <div class="add-cart">
+                    <h4><a href="preview.html">Thêm vào giỏ</a></h4>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="grid_1_of_4 images_1_of_4">
+            <a href="preview.html"> <img src="~/Data/files/Vanhoc/VAN-PHONG-PHAM-MORNING-GLORY-240x330.jpg" alt="" />
+            </a>
+            <h2>Văn Phòng Phẩm MORNING </h2>
+            <div class="price-details">
+                <div class="price-number">
+                    <p><span class="rupees">100.000</span></p>
+                </div>
+                <div class="add-cart">
+                    <h4><a href="preview.html">Thêm vào giỏ</a></h4>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>

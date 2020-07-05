@@ -1,0 +1,6 @@
+packages
+*.sln
+*.vs
+*.csproj
+*.csproj.user
+packages.config

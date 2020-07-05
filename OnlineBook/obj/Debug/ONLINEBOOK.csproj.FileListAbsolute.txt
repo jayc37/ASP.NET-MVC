@@ -1,0 +1,2 @@
+C:\Users\Son\Desktop\BOOK\BookOnline\OnlineBook\OnlineBook\obj\Debug\ONLINEBOOK.csprojAssemblyReference.cache
+C:\Users\Son\Desktop\BOOK\BookOnline\OnlineBook\OnlineBook\obj\Debug\ONLINEBOOK.csproj.CoreCompileInputs.cache
